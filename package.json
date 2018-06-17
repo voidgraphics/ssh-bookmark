@@ -1,6 +1,6 @@
 {
   "name": "ssh-bookmark",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A command-line utility to help you connect to your SSH endpoints",
   "author": "Adrien Leloup",
   "license": "MIT",
