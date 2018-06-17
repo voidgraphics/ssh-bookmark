@@ -1,90 +1,49 @@
 #!/usr/bin/env node
 // jshint esversion:6, -W030
 
-import fs from 'fs-extra';
-import colors from 'colors';
+import App from './App.js';
 import yargs from 'yargs';
-
+import inquirer from 'inquirer';
 import pkg from '../package.json';
-import utilities from './utilities';
+import utils from './utilities';
 
 let options = {};
 
 function startApp() {
-	
-	utilities.title('Starting boilerplate');
-	
-	if (utilities.dirExists(options.directory)) {
-		
-		utilities.o('log', 'Hello.'.green);
-		utilities.o(
-			'log',
-			options.directory,
-			options.foo,
-			options.baz,
-			options.other
-		);
-		utilities.o('log', 'Goodbye.'.red);
-		
-	} else {
-		
-		utilities.o('log', `Chosen directory does not exist: ${options.directory}`.red.bold);
-		utilities.o('log', 'Double check your path and try again'.toUpperCase().rainbow);
-		
-	}
-	
-	utilities.exitGraceful();
-	
+	new App(options);
+	utils.exitGraceful();
 }
 
 function getOptions() {
 	
 	let argv = yargs
 		.version(pkg.version)
-		.usage(`Usage: ssh-connect [name-of-bookmark]`)
-		.boolean([
-			'foo',
-			'baz'
-		])
-		.option('foo', {
-			alias: [
-				'f',
-			],
-			description: 'Create foo text files?',
-			type: 'boolean',
+		.usage(`Usage: ssh-connect`)
+		.option('add', {
+			alias: 'a',
+			description: 'Bookmark a host (eg: ssh-connect -a root@host.com)',
+			type: 'string'
 		})
-		.option('baz', {
+		.option('remove', {
+			alias: 'r',
+			description: 'Remove a bookmark (eg: ssh-connect -r name-of-bookmark)',
+			type: 'string'
+		})
+		.option('bookmark', {
 			alias: [
 				'b',
 			],
-			description: 'What will this option do?',
-			type: 'boolean',
-		})
-		.option('other', {
-			alias: [
-				'o',
-			],
-			description: 'Some other option?',
-			type: 'number',
-			default: 3,
-		})
-		.option('directory', {
-			alias: [
-				'd',
-			],
-			description: 'A directory!',
+			description: 'Connect to the specified bookmark directly',
 			type: 'string',
-			demand: true,
 		})
 		.alias('h', 'help')
 		.help('h', 'Show help.')
 		.argv;
 	
 	options = {
-		directory: fs.realpathSync(argv.directory),
-		foo: argv.foo,
-		baz: argv.baz,
-		other: argv.other,
+		bookmark: argv.bookmark,
+		add: argv.add,
+		remove: argv.remove
 	};
 	
 	startApp();

@@ -22,8 +22,12 @@
     "babel-preset-es2016": "^6",
     "babel-preset-es2017": "^6",
     "babel-register": "^6",
+    "chalk": "^2.4.1",
     "colors": "^1",
+    "fs": "^0.0.1-security",
     "fs-extra": "^2",
+    "inquirer": "^6.0.0",
+    "ssh2-client": "^1.2.1",
     "underscore": "^1",
     "yargs": "^6"
   }
