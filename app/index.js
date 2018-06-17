@@ -18,15 +18,15 @@ function getOptions() {
 	
 	let argv = yargs
 		.version(pkg.version)
-		.usage(`Usage: ssh-connect`)
+		.usage(`Usage: ssh-bookmark`)
 		.option('add', {
 			alias: 'a',
-			description: 'Bookmark a host (eg: ssh-connect -a root@host.com)',
+			description: 'Bookmark a host (eg: ssh-bookmark -a root@host.com)',
 			type: 'string'
 		})
 		.option('remove', {
 			alias: 'r',
-			description: 'Remove a bookmark (eg: ssh-connect -r name-of-bookmark)',
+			description: 'Remove a bookmark (eg: ssh-bookmark -r name-of-bookmark)',
 			type: 'string'
 		})
 		.option('bookmark', {

@@ -1,5 +1,5 @@
 {
-  "name": "ssh-connect",
+  "name": "ssh-bookmark",
   "version": "1.0.0",
   "description": "A command-line utility to help you connect to your SSH endpoints",
   "author": "Adrien Leloup",
