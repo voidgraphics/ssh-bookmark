@@ -36,7 +36,7 @@ var App = function () {
     function App(options) {
         _classCallCheck(this, App);
 
-        _utilities2.default.spaceLog('Welcome to ssh-connect!');
+        _utilities2.default.spaceLog('Welcome to ssh-bookmark!');
 
         this.loadBookmarks();
 
@@ -74,8 +74,8 @@ var App = function () {
 
             if (!(0, _underscore.size)(this.bookmarks)) {
                 console.log('Looks like you don\'t have any bookmarks yet!');
-                console.log('Run ssh-connect -a user@host.example to add a bookmark,');
-                console.log('or do ssh-connect -h for more information.');
+                console.log('Run ssh-bookmark -a user@host.example to add a bookmark,');
+                console.log('or do ssh-bookmark -h for more information.');
                 return;
             }
             var choices = this.getChoices();

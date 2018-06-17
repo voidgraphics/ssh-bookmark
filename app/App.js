@@ -8,7 +8,7 @@ import ssh from 'ssh2-client';
 export default class App {
 
     constructor(options) {
-        utils.spaceLog('Welcome to ssh-connect!');
+        utils.spaceLog('Welcome to ssh-bookmark!');
 
         this.loadBookmarks();
 
@@ -40,8 +40,8 @@ export default class App {
     showBookmarks() {
         if(!size(this.bookmarks)) {
             console.log('Looks like you don\'t have any bookmarks yet!');
-            console.log('Run ssh-connect -a user@host.example to add a bookmark,')
-            console.log('or do ssh-connect -h for more information.')
+            console.log('Run ssh-bookmark -a user@host.example to add a bookmark,')
+            console.log('or do ssh-bookmark -h for more information.')
             return;
         }
         let choices = this.getChoices();
