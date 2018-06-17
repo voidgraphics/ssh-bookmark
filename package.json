@@ -1,8 +1,8 @@
 {
   "name": "ssh-connect",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "description": "A command-line utility to help you connect to your SSH endpoints",
+  "author": "Adrien Leloup",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
