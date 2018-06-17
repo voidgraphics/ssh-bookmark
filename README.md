@@ -2,6 +2,8 @@
 
 A command-line utility to help you connect to your SSH endpoints
 
+![Alt Text](https://media.giphy.com/media/4H9cnnbeN2hGobTQ00/giphy.gif)
+
 ## Installation
 
 `npm i -g ssh-bookmark`
