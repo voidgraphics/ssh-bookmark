@@ -6,14 +6,15 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node . -h"
+    "start": "node . -h",
+    "build": "babel app -d build"
   },
   "repository": {
     "type": "",
     "url": ""
   },
   "bin": {
-    "ssh-bookmark": "app/bridge.js"
+    "ssh-bookmark": "build/bridge.js"
   },
   "main": "app/bridge",
   "dependencies": {
