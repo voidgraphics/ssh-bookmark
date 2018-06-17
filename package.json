@@ -13,7 +13,7 @@
     "url": ""
   },
   "bin": {
-    "ssh-connect": "app/bridge.js"
+    "ssh-bookmark": "app/bridge.js"
   },
   "main": "app/bridge",
   "dependencies": {
